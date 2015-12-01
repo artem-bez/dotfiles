@@ -1,0 +1,42 @@
+[user]
+	name = 
+	email = 
+[core]
+	pager=less -FRSX
+  excludesfile = ~/.gitignore
+[alias]
+  aa = add --all
+  ap = add --patch
+	st = status --short
+	co = checkout
+	br = branch
+	gblame = gui blame
+	
+	# commit aliases
+	ci = commit -v
+  cia = commit -v --amend
+
+	# diff aliases
+	df = diff --word-diff=color
+	dfst = diff --staged
+
+	grep = grep -Ii
+	ls = log --format='%<(8,trunc)%an %<(6,trunc)%cr - %<(55,trunc)%s %h'
+	# --pretty because --format puts empty line before stats
+	ll = log --pretty='format:%C(yellow)%an%C(reset) %cr - %s - %h' --stat
+
+  up = !git fetch origin && git rebase origin/master
+[color]
+	branch = auto
+	diff = auto
+	staus = auto
+[rerere]  # Reuse recorded resolution of conflicted merges.
+	enabled = True
+[rebase]
+	autosquash = True
+[commit]
+  template = ~/.gitmessage
+[help]
+	browser = xdg-open
+[push]
+	default = matching
